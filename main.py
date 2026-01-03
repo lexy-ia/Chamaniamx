@@ -1,39 +1,3 @@
-import streamlit as st
-from openai import OpenAI
-import os
-
-# --- 1. CONFIGURACIÓN VISUAL ---
-st.set_page_config(page_title="Chamania", page_icon="🐆", layout="centered")
-
-# --- Ocultar estilos de Streamlit ---
-hide_st_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_st_style, unsafe_allow_html=True)
-
-# --- 2. EL MENÚ LATERAL ---
-menu = st.sidebar.selectbox(
-    "Navegación",
-    ["🏠 Inicio (Acceso)", "🌿 El Guardián (Chat)", "🏺 Familia Tolteca", "🚀 Inversionistas", "🔒 Privacidad"]
-)
-
-st.sidebar.markdown("---")
-st.sidebar.caption("Chamania v1.1 Beta")
-st.sidebar.caption("Tecnología al servicio de la Tierra.")
-
-# Estado de la sesión (Memoria)
-if "acceso_concedido" not in st.session_state:
-    st.session_state.acceso_concedido = False
-
-# --- 3. SECCIÓN: INICIO (LOGIN) ---
-if menu == "🏠 Inicio (Acceso)":
-    st.markdown("<h1 style='text-align: center; color: #DAA520;'>Bienvenido/a a CHAMANIA</h1>", unsafe_allow_html=True)
-    st.markdown("<h3 style='text-align: center; color: gray;'>ALMA TOLTECA EN IA</h3>", unsafe_allow_html=True)
-    
-    # Aquí puedes poner tu imagen si ya la subiste, si no, usa un placeholder o quita la línea
     # st.image("portada_chamania.png", use_column_width=True) 
     
     st.markdown("---")
